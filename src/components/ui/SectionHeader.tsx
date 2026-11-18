@@ -12,13 +12,11 @@ export function SectionHeader({
   dark?: boolean;
 }) {
   return (
-    <div className="mb-12 flex flex-wrap items-end justify-between gap-7">
+    <div className="shead">
       <div>
         {kicker && (
           <div
-            className={`mb-[14px] inline-flex items-center gap-[10px] text-[0.95rem] font-semibold ${
-              dark ? "text-[var(--pink)]" : "text-[var(--red-deep)]"
-            }`}
+            className={`kicker ${dark ? "dark" : ""}`}
           >
             <span className="block h-[2px] w-7 -rotate-12 bg-current" />
             {kicker}

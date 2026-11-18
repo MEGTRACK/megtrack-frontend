@@ -33,6 +33,7 @@ export function MobileNav({
           alt="MEGTRACK"
           width={330}
           height={36}
+          style={{ width: "auto", height: "28px" }}
           className="h-7 w-auto brightness-0 invert"
         />
         <button
@@ -52,6 +53,10 @@ export function MobileNav({
             className="block border-b border-white/10 py-[10px] font-display text-[2rem] font-[750] leading-tight [font-stretch:110%]"
           >
             {l.label}
+            {l.href === "/services" && <small className="block text-[0.85rem] font-normal text-[#c9b8ba]">Courier, cargo, customs, storage, delivery</small>}
+            {l.href === "/ship-from/india-to-australia" && <small className="block text-[0.85rem] font-normal text-[#c9b8ba]">Door to door from anywhere in India</small>}
+            {l.href === "/partners" && <small className="block text-[0.85rem] font-normal text-[#c9b8ba]">For couriers and forwarders</small>}
+            {l.href === "/blog" && <small className="block text-[0.85rem] font-normal text-[#c9b8ba]">Guides and shipping insights</small>}
           </Link>
         ))}
       </nav>

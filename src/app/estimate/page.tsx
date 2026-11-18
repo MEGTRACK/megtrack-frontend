@@ -1,10 +1,21 @@
-import { ComingSoonPage } from "@/components/ui/ComingSoonPage";
+import { Estimator } from "@/components/tools/Estimator";
+import { PageHero } from "@/components/ui/PageHero";
+import { Section } from "@/components/ui/Section";
+import { QuoteBand } from "@/components/home/QuoteBand";
 
 export default function EstimatePage() {
   return (
-    <ComingSoonPage
-      title="Estimate your shipping rate"
-      description="Our rate estimate tool is being prepared. Contact our team for a shipping quote."
-    />
+    <>
+      <PageHero
+        crumbs={[{ label: "Rate estimate" }]}
+        title="Rate estimate, India to Australia"
+        lead="A price range for your shipment in seconds. No contact details needed."
+        ctas={false}
+      />
+      <Section>
+        <Estimator />
+      </Section>
+      <QuoteBand />
+    </>
   );
 }

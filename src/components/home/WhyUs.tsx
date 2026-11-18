@@ -1,35 +1,63 @@
-import { Truck, ShieldCheck, Clock, Package } from "lucide-react";
-import { Section } from "@/components/ui/Section";
-import { SectionHeader } from "@/components/ui/SectionHeader";
+import Link from "next/link";
+import { User, Milestone, ShieldCheck, Tag, Link2 } from "lucide-react";
 
 const cards = [
-  { icon: Truck, title: "Single accountable team", body: "One point of contact from pickup to delivery — no hand-offs between brokers." },
-  { icon: ShieldCheck, title: "Clearance done right", body: "Licensed customs brokers coordinate ABF and biosecurity on arrival." },
-  { icon: Clock, title: "Realistic timelines", body: "We quote lane times based on experience, not optimistic guesses." },
-  { icon: Package, title: "Care at handover", body: "Consolidation, repacking and inspection-ready cartons where needed." },
+  {
+    Icon: User,
+    title: "One team from landing to doorstep",
+    body: "Arrival, clearance coordination, storage and delivery run by one team, so you never chase four companies for one parcel.",
+  },
+  {
+    Icon: Milestone,
+    title: "One timeline for both ends",
+    body: "The sender in India and the recipient in Australia see the same milestones, including clearance.",
+  },
+  {
+    Icon: ShieldCheck,
+    title: "Honest about the rules",
+    body: "Biosecurity and customs explained before you ship. We never promise what customs will decide.",
+  },
+  {
+    Icon: Tag,
+    title: "Clear, competitive pricing",
+    body: "Written quotes, with rates tailored to your volumes.",
+  },
+  {
+    Icon: Link2,
+    title: "Ready for partners",
+    body: "Manifest files or API integration for couriers and forwarders sending regular volumes.",
+  },
 ];
 
 export function WhyUs() {
   return (
-    <Section tone="dark">
-      <div className="grid grid-cols-[.85fr_1.15fr] items-start gap-16 max-[900px]:grid-cols-1 max-[900px]:gap-7">
-        <div className="sticky top-[110px] max-[900px]:static">
-          <SectionHeader kicker="Why us" title="Reliable by design." dark />
+    <section className="pad mist tilt" aria-labelledby="wh-h">
+      <div className="wrap why">
+        <div className="stick">
+          <span className="kicker">Why MEGTRACK</span>
+          <h2 id="wh-h">Why choose MEGTRACK?</h2>
+          <p className="lead">
+            Most India–Australia shipments lose time at the handover, when they
+            land. That&apos;s exactly where we work.
+          </p>
+          <Link className="btn btn-dark" href="/about">
+            About MEGTRACK
+          </Link>
         </div>
-        <div className="grid gap-[14px]">
-          {cards.map(({ icon: Icon, title, body }) => (
-            <div key={title} className="grid grid-cols-[64px_1fr] gap-5 rounded-[18px] border border-[var(--line)] border-l-4 border-l-[var(--line)] bg-white p-6 text-[var(--jet)] transition hover:border-l-[var(--red)] max-[900px]:grid-cols-1">
-              <div className="grid h-16 w-16 place-items-center rounded-[18px] bg-[var(--jet)] text-[var(--pink)]">
-                <Icon className="h-[30px] w-[30px]" />
-              </div>
+        <div className="wcards">
+          {cards.map(({ Icon, title, body }) => (
+            <div key={title} className="wcard">
+              <span className="ic">
+                <Icon />
+              </span>
               <div>
-                <h3 className="mb-1 font-display text-[1.25rem] font-bold">{title}</h3>
-                <p className="m-0 text-[var(--muted)]">{body}</p>
+                <h3>{title}</h3>
+                <p>{body}</p>
               </div>
             </div>
           ))}
         </div>
       </div>
-    </Section>
+    </section>
   );
 }
