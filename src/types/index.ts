@@ -8,6 +8,10 @@ export interface Service {
   icon: LucideIcon;
   featured?: boolean;
   tags?: string[];
+  menu?: string;
+  included?: { title: string; body: string }[];
+  points?: string[];
+  faqs?: FAQItem[];
 }
 
 export interface Review {

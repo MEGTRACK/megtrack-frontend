@@ -1,22 +1,25 @@
-import { Truck, ShieldCheck, MapPin } from "lucide-react";
+import { Globe2, MapPin, Truck } from "lucide-react";
 import { Section } from "@/components/ui/Section";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
 const facts = [
-  { icon: Truck, title: "One partner, end-to-end", body: "Pickup to delivery handled by a single team." },
-  { icon: ShieldCheck, title: "Clearance coordinated", body: "ABF, biosecurity and duty handled on arrival." },
-  { icon: MapPin, title: "Every AU state", body: "Metro, regional and remote delivery available." },
+  { icon: MapPin, title: "India origin", body: "Pickup from any city or PIN code in India through our partners" },
+  { icon: Globe2, title: "Australia-wide", body: "Delivery to every state and territory" },
+  { icon: Truck, title: "One team", body: "A single point of contact from landing to doorstep" },
 ];
 
 export function IntroSection() {
   return (
     <Section>
       <div className="grid grid-cols-[.8fr_1.6fr] items-start gap-14 max-[900px]:grid-cols-1 max-[900px]:gap-5">
-        <SectionHeader kicker="Why MEGTRACK" title={<>Built for the India–Australia lane.</>} />
+        <SectionHeader
+          kicker="Meet MEGTRACK"
+          title="The Australian landing team for shipments from India"
+        />
         <div>
           <p className="mb-7 max-w-none font-display text-[clamp(1.35rem,2.3vw,1.9rem)] font-semibold leading-[1.35] [font-stretch:102%]">
-            We coordinate every step from an Indian doorstep to an Australian one — pickup, export documentation,
-            air or sea freight, customs, and final-mile delivery.
+            Indian couriers and shippers hand their freight to us. We make sure everything that lands in Australia is
+            cleared, stored if needed, and delivered, with clear answers at every step.
           </p>
           <div className="grid grid-cols-3 gap-[14px] max-[900px]:grid-cols-1">
             {facts.map(({ icon: Icon, title, body }) => (

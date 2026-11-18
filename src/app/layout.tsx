@@ -50,7 +50,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   };
 
   return (
-    <html lang="en-AU" className={`${saira.variable} ${noto.variable}`}>
+    <html lang="en-AU" data-scroll-behavior="smooth" className={`${saira.variable} ${noto.variable}`}>
       <body className="font-body">
         <a href="#main" className="sr-only focus:not-sr-only sr-only-focusable">
           Skip to content

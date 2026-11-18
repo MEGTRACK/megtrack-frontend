@@ -15,7 +15,7 @@ export function Section({
   containerClassName,
   children,
   id,
-}: {
+}: {  
   tone?: Tone;
   className?: string;
   containerClassName?: string;
@@ -23,7 +23,7 @@ export function Section({
   id?: string;
 }) {
   return (
-    <section id={id} className={cn("py-[110px] max-[760px]:py-[76px]", toneClasses[tone], className)}>
+    <section id={id} className={cn("py-[110px] max-[760px]:py-[76px]", toneClasses[tone], tone === "mist" ? "mist" : "", tone === "dark" ? "dark" : "", className)}>
       <Container className={containerClassName}>{children}</Container>
     </section>
   );

@@ -53,6 +53,7 @@ function HeaderContent({ pathname }: { pathname: string }) {
               width={330}
               height={36}
               priority
+              style={{ width: "auto", height: "36px" }}
               className={`h-9 w-auto max-[600px]:h-[18px] ${
                 onDark ? "brightness-0 invert" : ""
               }`}
@@ -74,7 +75,9 @@ function HeaderContent({ pathname }: { pathname: string }) {
                 type="button"
                 aria-expanded={servicesOpen}
                 aria-controls="services-menu"
-                aria-current={pathname.startsWith("/services") ? "page" : undefined}
+                aria-current={
+                  pathname.startsWith("/services") ? "page" : undefined
+                }
                 onClick={() => {
                   setTrackOpen(false);
                   setServicesOpen(true);
@@ -97,23 +100,25 @@ function HeaderContent({ pathname }: { pathname: string }) {
                   className="absolute left-1/2 top-[calc(100%+14px)] z-50 grid w-[min(760px,92vw)] -translate-x-[30%] grid-cols-[1.25fr_.75fr] overflow-hidden rounded-[20px] bg-white text-[var(--jet)] shadow-[0_30px_60px_-20px_rgba(33,20,20,.45)]"
                 >
                   <div className="grid gap-0 p-[14px]">
-                    {services.map(({ slug, title, shortDescription, icon: Icon }) => (
-                      <Link
-                        key={slug}
-                        href={`/services/${slug}`}
-                        className="grid grid-cols-[40px_1fr] items-center gap-3 rounded-xl px-3 py-2.5 no-underline hover:bg-[var(--mist)]"
-                      >
-                        <span className="grid h-10 w-10 place-items-center rounded-xl bg-[#fbe9eb] text-[var(--red)]">
-                          <Icon className="h-[22px] w-[22px]" />
-                        </span>
-                        <span>
-                          <b className="block text-[0.95rem]">{title}</b>
-                          <span className="text-[0.82rem] text-[var(--muted)]">
-                            {shortDescription}
+                    {services.map(
+                      ({ slug, title, shortDescription, icon: Icon }) => (
+                        <Link
+                          key={slug}
+                          href={`/services/${slug}`}
+                          className="grid grid-cols-[40px_1fr] items-center gap-3 rounded-xl px-3 py-2.5 no-underline hover:bg-[var(--mist)]"
+                        >
+                          <span className="grid h-10 w-10 place-items-center rounded-xl bg-[#fbe9eb] text-[var(--red)]">
+                            <Icon className="h-[22px] w-[22px]" />
                           </span>
-                        </span>
-                      </Link>
-                    ))}
+                          <span>
+                            <b className="block text-[0.95rem]">{title}</b>
+                            <span className="text-[0.82rem] text-[var(--muted)]">
+                              {shortDescription}
+                            </span>
+                          </span>
+                        </Link>
+                      ),
+                    )}
                     <Link
                       href="/services"
                       className="flex items-center gap-2 rounded-xl px-3 py-2.5 font-bold text-[var(--red-deep)] no-underline hover:bg-[var(--mist)]"
@@ -122,12 +127,15 @@ function HeaderContent({ pathname }: { pathname: string }) {
                     </Link>
                   </div>
                   <div className="grad-red flex flex-col p-[22px] text-white">
-                    <span className="text-[0.85rem] text-[#f6dadc]">India origin</span>
+                    <span className="text-[0.85rem] text-[#f6dadc]">
+                      India origin
+                    </span>
                     <h2 className="mb-2 mt-2 font-display text-xl font-bold">
                       Ship from anywhere in India
                     </h2>
                     <p className="text-[0.9rem] text-[#f6dadc]">
-                      Door to door, with clearance coordinated and delivery Australia-wide.
+                      Door to door, with clearance coordinated and delivery
+                      Australia-wide.
                     </p>
                     <ButtonLink
                       href="/ship-from/india-to-australia"
@@ -152,8 +160,8 @@ function HeaderContent({ pathname }: { pathname: string }) {
                   className={`rounded-full px-[15px] py-[9px] text-[0.93rem] font-semibold no-underline ${
                     active
                       ? onDark
-                        ? "bg-white text-[var(--jet)]"
-                        : "bg-[var(--jet)] text-white"
+                        ? "bg-white !text-[var(--jet)]"
+                        : "bg-[var(--jet)] !text-white"
                       : onDark
                         ? "text-white hover:bg-white hover:text-[var(--jet)]"
                         : "text-[var(--jet)] hover:bg-white"
@@ -236,7 +244,10 @@ function HeaderContent({ pathname }: { pathname: string }) {
               </button>
             </div>
             <p className="mb-0 mt-2.5 text-[0.82rem] text-[var(--muted)]">
-              Waiting for a parcel? <Link href="/track" className="font-semibold">View tracking help</Link>
+              Waiting for a parcel?{" "}
+              <Link href="/receiving" className="font-semibold">
+                What happens when it lands
+              </Link>
             </p>
           </form>
         )}

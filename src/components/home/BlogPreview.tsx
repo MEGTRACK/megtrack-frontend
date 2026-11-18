@@ -9,8 +9,8 @@ export function BlogPreview() {
     <Section>
       <SectionHeader
         kicker="From the blog"
-        title="Useful reads before you ship."
-        lead="Straightforward guidance on international shipping, customs and preparing your parcel."
+        title="Guides for shipping from India"
+        lead="Guides on freight, customs, documentation and planning, written for senders in India and recipients in Australia."
         action={
           <Link
             href="/blog"
