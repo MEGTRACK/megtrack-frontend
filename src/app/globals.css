@@ -1590,3 +1590,28 @@ textarea:focus {
   font-style: normal;
   white-space: normal;
 }
+/* Append to the END of your current globals.css — only what is still missing */
+.qcard p {
+  color: #c9b8ba;
+}
+.qcard .btn {
+  width: 100%;
+  margin-top: 6px;
+}
+.qcard hr {
+  border: 0;
+  border-top: 1px solid #3a2627;
+  margin: 22px 0;
+}
+.qcard a.sm {
+  color: var(--pink);
+  font-weight: 600;
+}
+.dark ul.checks li::before,
+.qcard ul.checks li::before {
+  background: rgba(242, 167, 174, 0.15);
+}
+.dark ul.checks li::after,
+.qcard ul.checks li::after {
+  border-color: var(--pink);
+}

@@ -5,27 +5,9 @@ import { useRouter } from "next/navigation";
 import { ArrowRight, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { siteConfig } from "@/lib/config";
+import { AU_STATES, SHIPMENT_TYPES, RESPONSE_TIME } from "@/lib/data/quote";
 
-const AU_STATES = [
-  "New South Wales",
-  "Victoria",
-  "Queensland",
-  "Western Australia",
-  "South Australia",
-  "Tasmania",
-  "Australian Capital Territory",
-  "Northern Territory",
-];
-
-const TYPES = [
-  "Personal parcel",
-  "Gift",
-  "Commercial goods",
-  "E-commerce orders",
-  "Larger cargo",
-];
-
-const RESPONSE_TIME = "1 business day";
+const TYPES = SHIPMENT_TYPES.filter((t) => t !== "Documents");
 
 export function QuoteBand() {
   const router = useRouter();
@@ -33,7 +15,7 @@ export function QuoteBand() {
   const kgRef = useRef<HTMLInputElement>(null);
   const [state, setState] = useState("");
   const [kg, setKg] = useState("");
-  const [type, setType] = useState(TYPES[0]);
+  const [type, setType] = useState<string>(TYPES[0]);
   const [badState, setBadState] = useState(false);
   const [badKg, setBadKg] = useState(false);
 

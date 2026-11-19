@@ -4,7 +4,6 @@ import "./globals.css";
 import { Header } from "../components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { MobileBar } from "@/components/layout/MobileBar";
-import { PreviewNote } from "@/components/layout/PreviewNote";
 import { siteConfig } from "@/lib/config";
 
 const saira = Saira({
@@ -65,7 +64,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </main>
         <Footer />
         <MobileBar />
-        <PreviewNote />
       </body>
     </html>
   );

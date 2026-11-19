@@ -141,11 +141,11 @@ export async function Footer() {
             <Link href="/privacy" className="hover:text-white hover:underline">
               Privacy
             </Link>
-            {"  "}
+            {" \u00a0 "}
             <Link href="/privacy" className="hover:text-white hover:underline">
               Terms
             </Link>
-            {"  "}
+            {" \u00a0 "}
             <Link href="/privacy" className="hover:text-white hover:underline">
               Accessibility
             </Link>
